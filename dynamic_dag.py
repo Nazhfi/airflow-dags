@@ -38,7 +38,7 @@ for n in range(1, number_of_dags):
     with dag:
         task = BashOperator(
             task_id='t1',
-            bash_command='echo "Hello World!" && sleep 10',
+            bash_command='echo "Hello World!" && sleep 600',
             dag=dag
         )
 
