@@ -13,7 +13,7 @@ def process(p1):
     print(p1)
     return 'done'
     
-for i in range (1,100)
+for i in range (1,100):
     with DAG(dag_id=f'parallel_dag_{i}', schedule_interval='0 0 * * *', default_args=default_args, catchup=False) as dag:
         
         # Tasks dynamically generated 
