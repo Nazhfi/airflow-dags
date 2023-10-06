@@ -10,7 +10,7 @@ from airflow.utils.email import send_email_smtp
 from airflow.utils.session import provide_session
 
 
-DYNAMIC_TAG = "dynamic_d1_dummy"
+DYNAMIC_TAG = "dynamic_d1_dummy_loop"
 
 local_tz = pendulum.timezone("Asia/Jakarta")
 enabled_dags = []
