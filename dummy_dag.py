@@ -1,14 +1,8 @@
-import subprocess
 from datetime import datetime, timedelta
 
 import pendulum
-from airflow.api.common.experimental.delete_dag import delete_dag
 from airflow.models import DAG, DagModel, Variable
 from airflow.operators.bash_operator import BashOperator
-from airflow.sensors.date_time import DateTimeSensor
-from airflow.utils.email import send_email_smtp
-from airflow.utils.session import provide_session
-
 
 DYNAMIC_TAG = "dynamic_d1_dummy_loop"
 
