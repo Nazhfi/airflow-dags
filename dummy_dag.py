@@ -44,17 +44,3 @@ for n in range(1, number_of_dags):
 
     globals()[dag_id] = dag
     enabled_dags.append(dag_id)
-
-
-@provide_session
-def get_all_dag_ids(session=None):
-    all_objs = session.query(DagModel).all()
-    return [i.dag_id for i in all_objs if DYNAMIC_TAG in i.tags and ENV in i.tags]
-
-
-all_dag_ids = get_all_dag_ids()  # all dag in database
-dag_ids_to_del = [dag_id for dag_id in all_dag_ids if dag_id not in enabled_dags]
-
-for k in dag_ids_to_del:
-    delete_dag(k)
-    del globals()[k]
