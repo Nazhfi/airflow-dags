@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-
+from airflow import DAG
 import pendulum
 from airflow.models import DAG, DagModel, Variable
 from airflow.operators.bash_operator import BashOperator
